@@ -8,9 +8,9 @@ int main(int argc, const char * argv[]) {
     for(int i=0;i<10;i++){
     	a[i]=i;
     	b[i]=i;
-		c[i]=i;
-		d[i]=i;
-		e[i]=i;
+	c[i]=i;
+	d[i]=i;
+	e[i]=i;
 	}
 	for(int i=0;i<10;i++){
 		for(int j=0;j<10;j++){
