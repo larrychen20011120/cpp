@@ -25,7 +25,6 @@ int main(int argc, const char * argv[]) {
 			}
 		}
 	}
-
 	cout<<num<<endl;
 	return 0;
 }
