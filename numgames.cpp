@@ -3,37 +3,20 @@
 #include <time.h>
 #include <stdlib.h>
 using namespace std;
-string test,guess;
+string guess,test;
+void num();
+bool inputwr(string a);
+string level(int a);
 
-//¸¹½X²£¥Í¾¹ 
-void num(){
-	srand(time(NULL));
-	for(int i=0; i<4;i++){
-		test[i]=(rand() % ('9'-'0'+1))+'0';
-		for(int k=0; k<i;k++){
-			 if(i==0){
-			 	break;
-			 }
-			 else if(test[i]==test[k]){
-			 	k=0;
-			 } 
-		}
-	}
-}
 int main(int argc, const char * argv[]) {	
 	num();
-	for(int i=0; i<4;i++){
-		cout<<test[i];
-	}cout<<endl;
-	int A=0,B=0;
-	bool again=true;
-    while(again==true,cin>>guess){
-		
-		if(guess.length()!=4){
-			cout<<"¿é¤J¿ù»~\n";
-		}
-		
-		//Åª¨úAB¼Æ 
+	int A=0,B=0,times=0;
+	while(1,getline(cin,guess)){
+		if(inputwr(guess)==1){
+			cout<<"è¼¸å…¥éŒ¯èª¤,è«‹é‡æ–°è¼¸å…¥\n";
+			continue;
+		}		
+		//è®€å–ABæ•¸ 
 		for(int i=0;i<4;i++){
 			for(int j=0;j<4;j++){
 				if(guess[j]==test[i] && j==i){
@@ -45,12 +28,64 @@ int main(int argc, const char * argv[]) {
 			}
 		}
 		cout<<A<<"A"<<B<<"B"<<endl;
+		times++;
 		if(A==4){
-			again=false;
+			break;
 		}
 		A=0;B=0;
 	}
-	cout<<"®¥³ß©p¤j¥ÕÃ¨\n";
+	cout<<level(times)<<endl;
     return 0;
 }
 
+//è™Ÿç¢¼ç”¢ç”Ÿå™¨ (ç›®å‰æœ‰bug) 
+void num(){
+	srand(time(NULL));
+	for(int i=0; i<4;i++){
+		test[i]=(rand() % ('9'-'0'+1))+'0';
+		for(int k=0; k<i;k++){
+			 if(i==0){
+			 	break;
+			 }
+			 if(test[i]==test[k]){
+			 	k=0;
+			 	test[i]=(rand() % ('9'-'0'+1))+'0';
+			 } 
+		}
+	}
+}
+//åˆ¤æ–·input
+bool inputwr(string a){
+	bool wrong=0;
+	if(a.length()!=4){
+		wrong=1;
+	}
+	for(int i=0;i<4;i++){
+		if(a[i]>'9'|a[i]<'0'){
+			wrong=1;
+		}
+	}
+	for(int i=0;i<4;i++){
+		for(int k=0;k<i;k++){
+			if(a[i]==a[k]){
+				wrong=1;
+			}
+		}
+	}
+	return wrong;
+}
+
+//ç­‰ç¬¬åˆ¤æ–·
+string level(int a){
+	string foryou;
+	if(a==1){
+		foryou="What the Fuck. Are you cheating?";
+	}else if(a>=2 && a<=5){
+		foryou="Aren't you feel happy? But it is easy shit!";
+	}else if(a>=6 && a<=10){
+		foryou="Dont be sad. You just a little bit foolish.";
+	}else{
+		foryou="Go to die one die! Stupid bitch!";			
+	}
+	return foryou;
+} 
