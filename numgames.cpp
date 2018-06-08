@@ -81,7 +81,7 @@ string level(int a){
 	if(a==1){
 		foryou="What the Fuck. Are you cheating?";
 	}else if(a>=2 && a<=5){
-		foryou="Aren't you feel happy? But it is easy shit!";
+		foryou="Don't you feel happy? But it is easy shit!";
 	}else if(a>=6 && a<=10){
 		foryou="Dont be sad. You just a little bit foolish.";
 	}else{
