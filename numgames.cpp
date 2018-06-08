@@ -11,7 +11,9 @@ string level(int a);
 int main(int argc, const char * argv[]) {	
 	num();
 	int A=0,B=0,times=0;
-	while(1,getline(cin,guess)){
+	bool again=true;
+	while(again==true){
+		getline(cin,guess);
 		if(inputwr(guess)==1){
 			cout<<"輸入錯誤,請重新輸入\n";
 			continue;
@@ -30,7 +32,7 @@ int main(int argc, const char * argv[]) {
 		cout<<A<<"A"<<B<<"B"<<endl;
 		times++;
 		if(A==4){
-			break;
+			again=false;
 		}
 		A=0;B=0;
 	}
