@@ -16,13 +16,13 @@ int main(int argc, const char * argv[]) {
 				}
 			}
 		}
-		b[1]=b[1]/2;
-		for(int k=0;k<6;k++){
-				if(b[k+1]>b[k]){
-					b[k+1]^=b[k]^=b[k+1]^=b[k];
-			}
+	b[1]=b[1]/2;
+	for(int k=0;k<6;k++){
+		if(b[k+1]>b[k]){
+			b[k+1]^=b[k]^=b[k+1]^=b[k];
 		}
-		cout<<b[6]<<endl;
+	}
+	cout<<b[6]<<endl;
 	}
     return 0;
 }
