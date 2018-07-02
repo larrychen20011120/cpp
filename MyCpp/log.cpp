@@ -5,29 +5,29 @@ using namespace std;
 int main(int argc, const char * argv[]) {
    long long int first,t,rule=0;
    long double k=1.0,base;
-   cout<<"¦¹¬°¨úLog­Èªº­pºâ¾¹\n"; 
-   cout<<"¿é¤J©³¼Æ\n";
+   cout<<"æ­¤ç‚ºå–Logå€¼çš„è¨ˆç®—å™¨\n"; 
+   cout<<"è¼¸å…¥åº•æ•¸\n";
    cin>>base;
-   cout<<"¿é¤J¦¸¼Æ\n";
+   cout<<"è¼¸å…¥æ¬¡æ•¸\n";
    cin>>t;
    for(int i=1;i<=t;i++){
-   k=k*base;
+   	k=k*base;
    }
    while(1){
-   k=k/10.0;
-   rule++;
-   if(k>=1&&k<10){
-   break;
-   }	
+   	k=k/10.0;
+   	rule++;
+   	if(k>=1&&k<10){
+   		break;
+  	}	
    }
    first=rule;
-   cout<<base<<"^"<<t<<"¨úLog«á:"<<endl<<endl; 
-   cout<<"­º¼Æ: "<<first<<endl<<"§À¼Æ: "; 
+   cout<<base<<"^"<<t<<"å–Logå¾Œ:"<<endl<<endl; 
+   cout<<"é¦–æ•¸: "<<first<<endl<<"å°¾æ•¸: "; 
    printf("%.4f\n",log10(k));
    int i=k;
    cout<<endl<<endl<<base<<"^"<<t<<endl; 
-   cout<<"¦ì¼Æ: "<<first+1<<endl;
-   cout<<"³Ì°ª¦ì¼Æ¦r: "<<i<<endl; 
+   cout<<"ä½æ•¸: "<<first+1<<endl;
+   cout<<"æœ€é«˜ä½æ•¸å­—: "<<i<<endl; 
 	return 0;
 }
  
