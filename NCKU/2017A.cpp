@@ -7,6 +7,7 @@ int main(int argc, const char * argv[]) {
 	string a;
 	char cont[7]={'N','C','K','U','S','I','E'};
 	for(int i=1;i<=n;i++){
+		cin.ignore();
 		getline(cin,a);
 		int b[7]={0,0,0,0,0,0,0};
 		for(int k=0;k<a.length();k++){
