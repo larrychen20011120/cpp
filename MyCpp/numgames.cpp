@@ -3,25 +3,42 @@
 #include <time.h>
 #include <stdlib.h>
 using namespace std;
-string guess,test;
+string guess,test,command;
+char p=34;  //æ­¤ç‚ºé›™å¼•è™Ÿ 
+
 void num();
+void rule();
 bool inputwr(string a);
 string level(int a);
 
 int main(int argc, const char * argv[]) {	
+	cout<<"This is a numbergame!\n";
+	cout<<"If you what to know the rule, type "<<p<<"help"<<p<<"."<<endl;
+	cout<<"If you know the rule, type "<<p<<"play"<<p<<". Then it will start."<<endl;
+	while(command!="play"){
+		cout<<">>>>";
+		cin>>command;
+		if(command=="play"){
+			cout<<"========================================================="<<endl;
+		}else if(command=="help"){
+			rule();
+		}else{
+			cout<<p<<command<<p;
+			cout<<"ä¸æ˜¯å…§éƒ¨æˆ–å¤–éƒ¨æŒ‡ä»¤"<<endl;
+		}
+		cin.ignore();
+	}
 	num();
-	for(int i=0;i<4;i++){
-		cout<<test[i];
-	}cout<<endl;
 	int A=0,B=0,times=0;
 	bool again=true;
 	while(again==true){
+		cout<<"guess>";
 		getline(cin,guess);
 		if(inputwr(guess)==1){
-			cout<<"¿é¤J¿ù»~,½Ð­«·s¿é¤J\n";
+			cout<<"è¼¸å…¥éŒ¯èª¤,è«‹é‡æ–°è¼¸å…¥\n";
 			continue;
 		}		
-		//Åª¨úAB¼Æ 
+		//è®€å–ABæ•¸ 
 		for(int i=0;i<4;i++){
 			for(int j=0;j<4;j++){
 				if(guess[j]==test[i] && j==i){
@@ -43,23 +60,24 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-//¸¹½X²£¥Í¾¹ (¥Ø«e¦³bug) 
+void rule(){
+	cout<<"https://zh.wikipedia.org/wiki/%E7%8C%9C%E6%95%B0%E5%AD%97\n";
+}
+
+//è™Ÿç¢¼ç”¢ç”Ÿå™¨ (ç›®å‰æœ‰bug) 
 void num(){
 	srand(time(NULL));
 	for(int i=0; i<4;i++){
 		test[i]=(rand() % ('9'-'0'+1))+'0';		//from 0 to 9
 		for(int k=0; k<i;k++){
-			 if(i==0){
-			 	break;
-			 }
-			 if(test[i]==test[k]){
+		     if(test[i]==test[k]){
 			 	k=0;
 			 	test[i]=(rand() % ('9'-'0'+1))+'0';
 			 } 
 		}
 	}
 }
-//§PÂ_input
+//åˆ¤æ–·input
 bool inputwr(string a){
 	bool wrong=0;
 	if(a.length()!=4){
@@ -80,7 +98,7 @@ bool inputwr(string a){
 	return wrong;
 }
 
-//µ¥²Ä§PÂ_
+//ç­‰ç¬¬åˆ¤æ–·
 string level(int a){
 	string foryou;
 	if(a==1){
