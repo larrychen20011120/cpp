@@ -4,7 +4,6 @@
 #include <stdlib.h>
 using namespace std;
 string guess,test,command;
-char p=34;  //此為雙引號 
 
 void num();
 void rule();
@@ -13,8 +12,8 @@ string level(int a);
 
 int main(int argc, const char * argv[]) {	
 	cout<<"This is a numbergame!\n";
-	cout<<"If you what to know the rule, type "<<p<<"help"<<p<<"."<<endl;
-	cout<<"If you know the rule, type "<<p<<"play"<<p<<". Then it will start."<<endl;
+	cout<<"If you what to know the rule, type "<<'"'<<"help"<<'"'<<"."<<endl;
+	cout<<"If you know the rule, type "<<'"'<<"play"<<'"'<<". Then it will start."<<endl;
 	while(command!="play"){
 		cout<<">>>>";
 		cin>>command;
@@ -23,7 +22,7 @@ int main(int argc, const char * argv[]) {
 		}else if(command=="help"){
 			rule();
 		}else{
-			cout<<p<<command<<p;
+			cout<<'"'<<command<<'"';
 			cout<<"不是內部或外部指令"<<endl;
 		}
 		cin.ignore();
@@ -64,7 +63,7 @@ void rule(){
 	cout<<"https://zh.wikipedia.org/wiki/%E7%8C%9C%E6%95%B0%E5%AD%97\n";
 }
 
-//號碼產生器 (目前有bug) 
+//號碼產生器 
 void num(){
 	srand(time(NULL));
 	for(int i=0; i<4;i++){
