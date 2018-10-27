@@ -19,7 +19,6 @@ int main(int argc, char** argv) {
 	for(int i=0;i<c;i++){
 		cin >> opt[i];
 		if(opt[i]==0){
-			//±ÛÂà°}¦C
 			int tmp[max1][max1];
 			for(int x=0;x<b;x++){
 				for(int y=0;y<a;y++){
@@ -33,7 +32,6 @@ int main(int argc, char** argv) {
 				}	
 			}
 		}else{
-			//Â½Âà°}¦C
 			 for(int x=0;x<a/2;x++){
 			 	for(int y=0;y<b;y++){
 			 		squ[x][y]^=squ[a-1-x][y]^=squ[x][y]^=squ[a-1-x][y];
