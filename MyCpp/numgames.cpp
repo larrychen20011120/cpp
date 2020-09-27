@@ -105,7 +105,7 @@ string level(int a){
 	}else if(a>=2 && a<=8){
 		foryou="GoodJob! Keep trying.";
 	}else if(a>=9 && a<=14){
-		foryou="Dont be sad. You just a little bit foolish.";
+		foryou="Dont be sad. You are just a little bit foolish.";
 	}else{
 		foryou="Go to die one die!";			
 	}
