@@ -12,10 +12,10 @@ int main () {
     // all's assignment :
     int all[5040][4];
     int t = 0, i, j, k, l;
-    for (i = 0; i < 9; i++) {
-        for (j = 0; j < 9; j++) {
-            for (k = 0; k < 9; k++) {
-                for (l = 0; l < 9; l++) {
+    for (i = 0; i <= 9; i++) {
+        for (j = 0; j <= 9; j++) {
+            for (k = 0; k <= 9; k++) {
+                for (l = 0; l <= 9; l++) {
                     if (i != j && i != k && i != l && j != k && j != l && k != l) {
                         all[t][0] = i;
                         all[t][1] = j;
