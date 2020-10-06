@@ -3,6 +3,8 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 int main(int argc, char** argv) {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	int n;
 	cin>>n;
 	int score[n];
